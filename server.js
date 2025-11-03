@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-app.use(express.json()); // untuk membaca JSON body
+app.use(express.json());
 
 // Data dummy sementara
 let products = [
@@ -56,7 +56,7 @@ app.delete('/products/:id', (req, res) => {
     
     if (index === -1) return res.status(404).json({ status: 'error', message: 'Product not found' });
     
-    products.splice(index, 1); // Hapus 1 elemen di posisi index
+    products.splice(index, 1);
     res.json({ status: 'success', message: 'Product deleted' });
 });
 
